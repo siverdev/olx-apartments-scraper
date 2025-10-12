@@ -1,9 +1,9 @@
 import requests, os, json
 from datetime import datetime
-from dotenv import load_dotenv
+# from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 
-load_dotenv()
+# load_dotenv()
 
 OLX_BASE_URL="https://www.olx.ua"
 SEEN_FILE="data/seen.json"
