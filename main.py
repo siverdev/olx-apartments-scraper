@@ -1,4 +1,5 @@
 import requests, os, json
+from datetime import datetime
 from dotenv import load_dotenv
 from bs4 import BeautifulSoup
 
@@ -30,8 +31,7 @@ soup = BeautifulSoup(page.text, "html.parser")
 listing = soup.find("div", attrs={"data-testid": "listing-grid"})
 items = listing.find_all("div", attrs={"data-testid": "l-card"})
 
-
-print(len(items))
+sendNotification("⏰ " + datetime.now().strftime("%d-%m %H:%M:%S") + " ⏰")
 
 for item in reversed(items): 
     # Check if already seen
