@@ -23,8 +23,13 @@ priceTo=9000
 page=1
 url = f"https://www.olx.ua/uk/nedvizhimost/kvartiry/dolgosrochnaya-arenda-kvartir/kiev/?search%5Bdist%5D=2&search%5Border%5D=created_at:desc&search%5Bfilter_float_price:to%5D={priceTo}&currency=UAH&page={page}"
 
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
+                  "AppleWebKit/537.36 (KHTML, like Gecko) "
+                  "Chrome/120.0.0.0 Safari/537.36"
+}
 
-page = requests.get(url)
+page = requests.get(url, headers=headers)
 
 soup = BeautifulSoup(page.text, "html.parser")
 
