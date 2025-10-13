@@ -55,4 +55,7 @@ for item in reversed(items):
     seen.append(item_id)
 
 
+if len(seen) > MAX_SEEN:
+    seen = seen[-MAX_SEEN:]
+    
 json.dump(seen, open(SEEN_FILE, "w"))
